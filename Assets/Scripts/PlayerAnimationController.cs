@@ -1,18 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerAnimationController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField] private Animator animator;
+    [SerializeField] private PlayerMovement playerMovement;
+    
     void Update()
     {
+        JetPackAnimationActivate();
+    }
+
+    private void JetPackAnimationActivate()
+    {
+        if (!playerMovement.isGrounded)
+        {
+            animator.SetBool("isJetpackActive", true);
+        }
         
+        else if (playerMovement.isGrounded)
+        {
+            animator.SetBool("isJetpackActive", false);
+        }
     }
 }

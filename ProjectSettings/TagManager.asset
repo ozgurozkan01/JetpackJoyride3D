@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Laser
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -16,10 +18,10 @@ TagManager:
   - Ragdoll
   - Doc
   - Cube
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Laser
+  - Ground
+  - Coin
   - 
   - 
   - 

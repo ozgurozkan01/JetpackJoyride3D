@@ -1,41 +1,36 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LaserController : MonoBehaviour
 {
-    [SerializeField] private LineRenderer lr;
-    [SerializeField] private LayerMask targetLayer;
-    [SerializeField] private Color[] colors;
-    [SerializeField] private float lerpMultiplier;
-    private RaycastHit hit;
+    [SerializeField] private GameObject deactiveeLaser;
+    [SerializeField] private GameObject activeLaser;
 
-    private void Start()
+    private int _laserAmount;
+    private float _timeCounter;
+    [SerializeField] private float activationTime;
+    private void Update()
     {
-        lr.startColor = colors[0];
-        lr.endColor = colors[0];
+        CheckTimeForActivation();
     }
 
-    void Update()
+    private void ActivateLaser()
     {
-        Laser();
+        deactiveeLaser.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        activeLaser.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        activeLaser.gameObject.GetComponent<Collider>().enabled = true;
     }
 
-    private void Laser()
+    private void CheckTimeForActivation()
     {
-        lr.SetPosition(0, transform.position);
-        if (Physics.Raycast(transform.position, Vector3.forward, out hit, 15f, targetLayer))
+        if (_timeCounter >= activationTime)
         {
-            lr.SetPosition(1, hit.point);
+            ActivateLaser();
+            _timeCounter = activationTime;
         }
-        ChangeLaserColorSmoothly();
-    }
 
-    private void ChangeLaserColorSmoothly()
-    {
-        for (int i = 0; i < colors.Length - 1; i++)
+        else
         {
-            lr.startColor = Color.Lerp(colors[i], colors[i + 1], lerpMultiplier * Time.deltaTime);
-            lr.endColor = Color.Lerp(colors[i], colors[i + 1], lerpMultiplier * Time.deltaTime);
+            _timeCounter += Time.deltaTime;
         }
     }
 

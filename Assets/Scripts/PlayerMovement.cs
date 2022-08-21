@@ -6,6 +6,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jetPackSpeed;
     [SerializeField] private float speed;
     
+    // Ground Check
+    [SerializeField] private float groundDistance;
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private Transform groundCheck;
+    public bool isGrounded;
+    
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -18,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
         {
             JetPackActivate();
         }
+        
+        CheckIsGround();
     }
     
     private void MovePlayer()
@@ -28,5 +36,10 @@ public class PlayerMovement : MonoBehaviour
     private void JetPackActivate()
     {
         _rigidbody.velocity = new Vector3(0f, jetPackSpeed * Time.deltaTime, _rigidbody.velocity.z);
+    }
+
+    private void CheckIsGround()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
     }
 }

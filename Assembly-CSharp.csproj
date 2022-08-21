@@ -11,7 +11,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>VolumetricLines</RootNamespace>
     <ProjectGuid>{f0a99dc9-461a-9713-ca8d-51c037b4dbfb}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -50,6 +50,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\EffectExamples\Misc Effects\Scripts\SpawnEffect.cs" />
      <Compile Include="Assets\Scripts\CamereMovement.cs" />
      <Compile Include="Assets\Scripts\DocAnimationController.cs" />
      <Compile Include="Assets\Scripts\DocClonerController.cs" />
@@ -59,8 +60,29 @@
      <Compile Include="Assets\Scripts\PlayerAnimationController.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\RagdollController.cs" />
+     <Compile Include="Assets\Scripts\ScoreController.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CannonBehavior.cs" />
+     <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CreateSinShapedLineStrip.cs" />
+     <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\ShotBehavior.cs" />
+     <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\VolumetricMultiLineBehavior.cs" />
+     <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineBehavior.cs" />
+     <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineStripBehavior.cs" />
+     <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineVertexData.cs" />
+     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\_LineStripShader.cginc" />
+     <None Include="Assets\EffectExamples\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
+     <None Include="Assets\EffectExamples\Magic Effects\Shaders\Ice.shader" />
+     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-TextureAlphaBlended.shader" />
+     <None Include="Assets\EffectExamples\Misc Effects\Shaders\Respawn.shader" />
+     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-TextureAdditive.shader" />
+     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\_SingleLineShader.cginc" />
+     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-TextureAdditive.shader" />
+     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-TextureAlphaBlended.shader" />
+     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-LightSaber.shader" />
+     <None Include="Assets\EffectExamples\Misc Effects\Shaders\FireFly.shader" />
+     <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-LightSaber.shader" />
+     <None Include="Assets\EffectExamples\Misc Effects\Shaders\Dissolve.shader" />
  <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
  <HintPath>C:/Users/ozgur/Documents/GitHub/JetpackJoyride3D/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
  </Reference>

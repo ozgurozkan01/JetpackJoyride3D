@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DocClonerController : MonoBehaviour
 {
     [SerializeField] private GameObject originalDocPrefab;
     [SerializeField] private float zPosition;
+    [SerializeField] private DocMovement _docMovement;
 
     private float _timeLimit = 1.5f;
     private float _timeCounter;
+
 
     void Update()
     {
@@ -22,7 +23,7 @@ public class DocClonerController : MonoBehaviour
 
     private void zPositionIncreaseRandomly()
     {
-        zPosition += Random.Range(30, 45);
+        zPosition += Random.Range(15, 25);
     }
 
     private void TimeController()
