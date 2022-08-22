@@ -1036,15 +1036,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db3276fd9915304793cd8a73be02d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetLaserLeft: 0
-  offsetLaserRight: 0
   laserLeft: {fileID: 8778276885457034754}
   laserRight: {fileID: 443947551243822456}
   deactiveeLaser: {fileID: 7713716106320788051}
   activeLaser: {fileID: 3540011017207572257}
   lerpMultiplier: 5
   player: {fileID: 0}
-  activationTime: 5
+  activationTime: 3
+  deactivationTime: 3
 --- !u!1 &7371694088758284711
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,6 @@ public class ActiveLasersAmountController : MonoBehaviour
     private void DetermineTheLaserAmount()
     {
         _activeLaserAmount = Random.Range(1, 6);
-         Debug.Log(_activeLaserAmount);
     }
 
     private void ShuffleTheIndexListRandomly()
@@ -37,7 +36,6 @@ public class ActiveLasersAmountController : MonoBehaviour
 
         for (int i = 0; i < _activeLaserAmount; i++)
         {
-            Debug.Log(indexList[i]);
             lasers[indexList[i]].LaserActivation();
         }
     }

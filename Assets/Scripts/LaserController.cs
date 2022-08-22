@@ -12,9 +12,12 @@ public class LaserController : MonoBehaviour
     [SerializeField] private GameObject player;
 
     private bool _activationController;
+    private bool _deactivationController;
     private int _laserAmount;
-    private float _timeCounter;
+    private float _activationTimeCounter;
+    private float _deactivationTimeCounter;
     [SerializeField] private float activationTime;
+    [SerializeField] private float deactivationTime;
 
     private void Start()
     {
@@ -24,17 +27,13 @@ public class LaserController : MonoBehaviour
     
     private void Update()
     {
+        offsetLaserLeft = player.transform.position.z - laserLeft.transform.position.z;
+        offsetLaserRight = laserRight.transform.position.z - player.transform.position.z;
         LaserActivationCheck();
+        LaserDeactivationCheck();
     }
 
-    private void ActivateLaser()
-    {
-        deactiveeLaser.gameObject.GetComponent<MeshRenderer>().enabled = false;
-        activeLaser.gameObject.GetComponent<MeshRenderer>().enabled = true;
-        activeLaser.gameObject.GetComponent<Collider>().enabled = true;
-    }
-
-    private void ReplaceTheLaser()
+    private void ReplaceTheLaserForActivation()
     {
         if (offsetLaserLeft >= 7.5f)
         {
@@ -51,35 +50,75 @@ public class LaserController : MonoBehaviour
             deactiveeLaser.gameObject.GetComponent<MeshRenderer>().enabled = true;
         }
     }
+
+    private void ReplaceTheLaserForDeactivation()
+    {
+        if (offsetLaserLeft <= 10f)
+        {
+            laserLeft.transform.position = Vector3.Lerp(laserLeft.transform.position, laserLeft.transform.position + new Vector3(0f, 0f, -1), lerpMultiplier * Time.deltaTime);
+        }
+        
+        if (offsetLaserRight <= 10f)
+        {
+            laserRight.transform.position = Vector3.Lerp(laserRight.transform.position, laserRight.transform.position + new Vector3(0f, 0f, 1f), lerpMultiplier * Time.deltaTime);
+        }
+    }
     
     private void CheckTimeForActivation()
     {
-        if (_timeCounter >= activationTime)
+        if (_activationTimeCounter >= activationTime)
         {
-            ActivateLaser();
-            _timeCounter = activationTime;
+            deactiveeLaser.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            activeLaser.gameObject.GetComponent<MeshRenderer>().enabled = true;
+            activeLaser.gameObject.GetComponent<Collider>().enabled = true;
+            LaserDeactivation();
         }
 
         else
         {
-            _timeCounter += Time.deltaTime;
+            _activationTimeCounter += Time.deltaTime;
         }
     }
-        
+
+    private void CheckTimeForDeactivation()
+    {
+        if (_deactivationTimeCounter >= deactivationTime)
+        {
+            activeLaser.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            activeLaser.gameObject.GetComponent<Collider>().enabled = false;
+            ReplaceTheLaserForDeactivation();
+        }
+
+        else
+        {
+            _deactivationTimeCounter += Time.deltaTime;
+        }
+    }
+    
     public void LaserActivation()
     {
         _activationController = true;
     }
 
+    private void LaserDeactivation()
+    {
+        _activationController = false;
+    }
 
     private void LaserActivationCheck()
     {
         if (_activationController)
         {
-            offsetLaserLeft = player.transform.position.z - laserLeft.transform.position.z;
-            offsetLaserRight = laserRight.transform.position.z - player.transform.position.z;
-            ReplaceTheLaser();
+            ReplaceTheLaserForActivation();
             CheckTimeForActivation();
+        }
+    }
+
+    private void LaserDeactivationCheck()
+    {
+        if (!_activationController)
+        {
+            CheckTimeForDeactivation();
         }
     }
 
