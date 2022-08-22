@@ -51,6 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\EffectExamples\Misc Effects\Scripts\SpawnEffect.cs" />
+     <Compile Include="Assets\Scripts\ActiveLasersAmountController.cs" />
      <Compile Include="Assets\Scripts\CamereMovement.cs" />
      <Compile Include="Assets\Scripts\DocAnimationController.cs" />
      <Compile Include="Assets\Scripts\DocClonerController.cs" />
