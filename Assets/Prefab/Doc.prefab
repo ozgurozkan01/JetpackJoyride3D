@@ -409,7 +409,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 73eb0c806ccb7ef40a5163eeb70631a1, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 1
+  m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -445,7 +445,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 114
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &-7658626568284651256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +459,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainRigidbody: {fileID: 1189793473923185757}
+  mainCollider: {fileID: 5097712208786196521}
+  explosionMultiplier: 3
   animator: {fileID: 262799511814435765}
 --- !u!114 &-650596218749970457
 MonoBehaviour:
@@ -486,8 +488,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b312fbeba766414c99cbd820166bc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 4000
-  runSpeed: 7500
+  walkSpeed: 0
+  runSpeed: 0
+  fallDownForce: 1500
   docAnimCont: {fileID: -650596218749970457}
 --- !u!1 &1238726861625427038
 GameObject:

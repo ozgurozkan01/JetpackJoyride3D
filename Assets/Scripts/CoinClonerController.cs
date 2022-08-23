@@ -12,7 +12,6 @@ public class CoinClonerController : MonoBehaviour
     private void Start()
     {
         CreateNewCoin();
-        Debug.Log(_yPosition);
     }
 
     private void DeterminePositionOfCoin()

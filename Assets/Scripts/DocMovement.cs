@@ -4,6 +4,7 @@ public class DocMovement : MonoBehaviour
 {
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
+    [SerializeField] private float fallDownForce;
     [SerializeField] private DocAnimationController docAnimCont;
     private float _currentSpeed;
     private Rigidbody _rigidbody;
@@ -19,7 +20,7 @@ public class DocMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
     
-    void Update()
+    void LateUpdate()
     {
         MoveDoc();
     }
@@ -41,12 +42,12 @@ public class DocMovement : MonoBehaviour
     {
         if (_directionType == 0)
         {
-            _rigidbody.AddForce(_currentSpeed * Time.deltaTime * -direction, ForceMode.Acceleration);
+            _rigidbody.velocity = new Vector3(0f, _rigidbody.velocity.y, -_currentSpeed * Time.deltaTime);
         }
         
         else if (_directionType == 1)
         {
-            _rigidbody.AddForce(_currentSpeed * Time.deltaTime * direction, ForceMode.Acceleration);
+            _rigidbody.velocity = new Vector3(0f, _rigidbody.velocity.y, _currentSpeed * Time.deltaTime);
         }
     }
     
@@ -63,6 +64,4 @@ public class DocMovement : MonoBehaviour
             gameObject.transform.Rotate(0f, 180f, 0f);
         }
     }
-
-    
 }

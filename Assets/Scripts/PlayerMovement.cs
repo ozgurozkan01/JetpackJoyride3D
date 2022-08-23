@@ -11,13 +11,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform groundCheck;
     public bool isGrounded;
-    
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
     }
-
-    void Update()
+    
+    void FixedUpdate()
     {
         MovePlayer();
         if (Input.GetMouseButton(0))
