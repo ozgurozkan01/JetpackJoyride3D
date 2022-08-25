@@ -4,7 +4,7 @@ public class ClonerConnection : MonoBehaviour
 {
 
     [SerializeField] private CoinClonerController _coinClonerController;
-    [SerializeField] private SmallLaserController _smallLaserController;
+    [SerializeField] private SmallLaserClonerController _smallLaserController;
     [SerializeField] private LaserGroupController _laserGroupController;
 
     private int _clonerType; // 1-> coin, 2-> small laser

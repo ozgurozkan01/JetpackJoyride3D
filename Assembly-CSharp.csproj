@@ -67,11 +67,13 @@
      <Compile Include="Assets\Scripts\PlayerAnimationController.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerRagdollController.cs" />
-     <Compile Include="Assets\Scripts\RocketController.cs" />
+     <Compile Include="Assets\Scripts\RocketClonerController.cs" />
+     <Compile Include="Assets\Scripts\RocketMovement.cs" />
+     <Compile Include="Assets\Scripts\RocketPointFollowPlayer.cs" />
      <Compile Include="Assets\Scripts\RotateDynamicLaser.cs" />
      <Compile Include="Assets\Scripts\ScoreController.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-     <Compile Include="Assets\Scripts\SmallLaserController.cs" />
+     <Compile Include="Assets\Scripts\SmallLaserClonerController.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CannonBehavior.cs" />
      <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CreateSinShapedLineStrip.cs" />
