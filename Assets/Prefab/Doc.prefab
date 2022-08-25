@@ -488,8 +488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b312fbeba766414c99cbd820166bc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 0
-  runSpeed: 0
+  walkSpeed: 100
+  runSpeed: 200
   fallDownForce: 1500
   docAnimCont: {fileID: -650596218749970457}
 --- !u!1 &1238726861625427038

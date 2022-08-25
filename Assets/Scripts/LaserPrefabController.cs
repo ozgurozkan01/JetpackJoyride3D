@@ -10,7 +10,8 @@ public class LaserPrefabController : MonoBehaviour
     [SerializeField] private GameObject activeLaser;
     [SerializeField] private float lerpMultiplier;
     [SerializeField] private GameObject player;
-
+    [SerializeField] private ClonerConnection _clonerConnection;
+    
     private bool _activationController;
     private bool _deactivationController;
     private int _laserAmount;
@@ -21,6 +22,8 @@ public class LaserPrefabController : MonoBehaviour
 
     private void Start()
     {
+        _clonerConnection = GetComponent<ClonerConnection>();
+        _clonerConnection = FindObjectOfType<ClonerConnection>();
         player = GetComponent<GameObject>();
         player = GameObject.Find("Player");
     }
@@ -61,6 +64,11 @@ public class LaserPrefabController : MonoBehaviour
         if (offsetLaserRight <= 10f)
         {
             laserRight.transform.position = Vector3.Lerp(laserRight.transform.position, laserRight.transform.position + new Vector3(0f, 0f, 1f), lerpMultiplier * Time.deltaTime);
+        }
+
+        else
+        {
+            _clonerConnection._isActivatedLaserGroup = false;
         }
     }
     
