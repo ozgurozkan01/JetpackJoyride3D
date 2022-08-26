@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rigidbody;
     [SerializeField] private float jetPackSpeed;
     [SerializeField] private float speed;
+    [SerializeField] private JetpackActivation jetpackActivation;
     
     // Ground Check
     [SerializeField] private float groundDistance;
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void JetPackActivate()
     {
+        jetpackActivation.JetpackActivate();
         _rigidbody.velocity = new Vector3(0f, jetPackSpeed * Time.deltaTime, _rigidbody.velocity.z);
     }
 

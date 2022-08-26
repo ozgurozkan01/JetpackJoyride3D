@@ -8,18 +8,18 @@ public class RocketClonerController : MonoBehaviour
     [HideInInspector] public bool firingController;
 
 
-    private float _timeLimit = 3f;
+    [SerializeField] private float _timeLimit;
     private float _timeCounter;
 
     private void Update()
     {
         TimeControllerForFiring();
     }
-
+    
     private void CreateNewRocket()
     {
         GameObject newRocket = Instantiate(originalRocketPrefab, rocketPoint.transform.position, Quaternion.identity);
-        newRocket.transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
+        newRocket.transform.rotation = Quaternion.Euler(-90, 0f, 0f);
     }
 
     private void TimeControllerForFiring()

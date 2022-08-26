@@ -61,5 +61,10 @@ public class PlayerRagdollController : MonoBehaviour
             Debug.Log("1");
             RagdollActivation();
         }
+        
+        else if (collision.gameObject.CompareTag("Rocket"))
+        {
+            RagdollActivation();
+        }
     }
 }

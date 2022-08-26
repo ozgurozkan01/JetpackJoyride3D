@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4262035711250037726}
   m_Layer: 15
   m_Name: Rocket
-  m_TagString: Untagged
+  m_TagString: Rocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308501770339742686}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.60876137, y: 0, z: 0, w: 0.7933534}
   m_LocalPosition: {x: -8.4951515, y: 5.1781054, z: -0.17}
   m_LocalScale: {x: 0.4, y: 0.8, z: 0.4}
   m_Children:
   - {fileID: 984627683722068906}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -75, y: 0, z: 0}
 --- !u!33 &1342376781042719256
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aff014d68d97cd40a12bb67eb9b7362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketSpeed: 15
+  rocketSpeed: 10
 --- !u!1 &3398547556452367488
 GameObject:
   m_ObjectHideFlags: 0

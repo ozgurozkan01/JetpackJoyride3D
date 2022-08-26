@@ -62,6 +62,8 @@
      <Compile Include="Assets\Scripts\DocMovement.cs" />
      <Compile Include="Assets\Scripts\DocRagdollController.cs" />
      <Compile Include="Assets\Scripts\GoldRotation.cs" />
+     <Compile Include="Assets\Scripts\GroundPositionController.cs" />
+     <Compile Include="Assets\Scripts\JetpackActivation.cs" />
      <Compile Include="Assets\Scripts\LaserGroupController.cs" />
      <Compile Include="Assets\Scripts\LaserPrefabController.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimationController.cs" />
@@ -70,7 +72,8 @@
      <Compile Include="Assets\Scripts\RocketClonerController.cs" />
      <Compile Include="Assets\Scripts\RocketMovement.cs" />
      <Compile Include="Assets\Scripts\RocketPointFollowPlayer.cs" />
-     <Compile Include="Assets\Scripts\RotateDynamicLaser.cs" />
+     <Compile Include="Assets\Scripts\RocketRotation.cs" />
+     <Compile Include="Assets\Scripts\RotateSmallLaser.cs" />
      <Compile Include="Assets\Scripts\ScoreController.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\Scripts\SmallLaserClonerController.cs" />

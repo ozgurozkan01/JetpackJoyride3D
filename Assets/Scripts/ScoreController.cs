@@ -5,6 +5,7 @@ public class ScoreController : MonoBehaviour
     [HideInInspector] public int score;
     [SerializeField] private Text scoreText;
     [SerializeField] private CoinDestroyController coinDestroyController;
+    [SerializeField] private GroundPositionController _groundPositionController;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,11 @@ public class ScoreController : MonoBehaviour
             score += 1;
             scoreText.text = score.ToString();
             coinDestroyController.DestroyCoinWhenItsTriggered(other.gameObject);
+
+            if (score % 50 == 0 && score != 0)
+            {
+                _groundPositionController.UpdateGroundPosition();
+            }
         }
     }
 }

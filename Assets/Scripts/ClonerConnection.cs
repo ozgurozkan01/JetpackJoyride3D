@@ -27,15 +27,15 @@ public class ClonerConnection : MonoBehaviour
 
     private void UpdatePositionOfCloneObject()
     {
-        _yPosition = Random.Range(8, 13);
-        _zPosition = Random.Range(10, 20);
+        _yPosition = Random.Range(7, 13);
+        _zPosition = Random.Range(5, 15);
 
         _zPositionSum += _zPosition;
     }
     
     private void DetermineTheClonerType()
     {
-        _clonerType = Random.Range(1, 3);
+        _clonerType = Random.Range(1, 12);
     }
 
     private void CreationAccordingToClonerType()
@@ -43,14 +43,14 @@ public class ClonerConnection : MonoBehaviour
         DetermineTheClonerType();
         UpdatePositionOfCloneObject();
         
-        if (_clonerType == 1)
-        {
-            _coinClonerController.CreateNewCoin(_yPosition, _zPositionSum);
-        }
-        
-        else if (_clonerType == 2)
+        if (_clonerType <= 8)
         {
             _smallLaserController.CreateNewSmallLaser(_yPosition, _zPositionSum);
+        }
+        
+        else
+        {
+            _coinClonerController.CreateNewCoin(_yPosition, _zPositionSum);
         }
     }
 
@@ -71,7 +71,7 @@ public class ClonerConnection : MonoBehaviour
 
     private void ActivateControlTheLaserGroup()
     {
-        if (cloneAmount == 30)
+        if (cloneAmount % 10 == 0 && cloneAmount != 0)
         {
             _isActivatedLaserGroup = true;
             _laserGroupController.ActivateTheLasers();
