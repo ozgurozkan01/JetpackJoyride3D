@@ -12,8 +12,8 @@ public class LaserPrefabController : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private ClonerConnection _clonerConnection;
     
-    private bool _activationController;
-    private bool _deactivationController;
+    private bool _activationTimer;
+    private bool _deactivationTimer;
     private int _laserAmount;
     private float _activationTimeCounter;
     private float _deactivationTimeCounter;
@@ -32,8 +32,28 @@ public class LaserPrefabController : MonoBehaviour
     {
         offsetLaserLeft = player.transform.position.z - laserLeft.transform.position.z;
         offsetLaserRight = laserRight.transform.position.z - player.transform.position.z;
-        LaserActivationCheck();
-        LaserDeactivationCheck();
+
+        if (_activationTimer)
+        {
+            ReplaceTheLaserForActivation();
+            CheckTimeForActivation();
+        }
+        
+        else if (!_activationTimer)
+        {
+            _activationTimeCounter = 0;
+            LaserActivationCheck(false);
+        }
+        
+        if (_deactivationTimer)
+        {
+            CheckTimeForDeactivation();
+        }
+        
+        else if (!_deactivationTimer) 
+        {
+            _deactivationTimeCounter = 0;
+        }
     }
 
     private void ReplaceTheLaserForActivation()
@@ -76,16 +96,14 @@ public class LaserPrefabController : MonoBehaviour
     {
         if (_activationTimeCounter >= activationTime)
         {
-            deactiveeLaser.gameObject.GetComponent<MeshRenderer>().enabled = false;
-            activeLaser.gameObject.GetComponent<MeshRenderer>().enabled = true;
-            activeLaser.gameObject.GetComponent<Collider>().enabled = true;
-            LaserDeactivation();
+                deactiveeLaser.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                activeLaser.gameObject.GetComponent<MeshRenderer>().enabled = true;
+                activeLaser.gameObject.GetComponent<Collider>().enabled = true;
+                _activationTimer = false;
         }
+            
+        _activationTimeCounter += Time.deltaTime;
 
-        else
-        {
-            _activationTimeCounter += Time.deltaTime;
-        }
     }
 
     private void CheckTimeForDeactivation()
@@ -95,39 +113,24 @@ public class LaserPrefabController : MonoBehaviour
             activeLaser.gameObject.GetComponent<MeshRenderer>().enabled = false;
             activeLaser.gameObject.GetComponent<Collider>().enabled = false;
             ReplaceTheLaserForDeactivation();
+            _deactivationTimer = false;
         }
 
-        else
+        _deactivationTimeCounter += Time.deltaTime;
+    }
+    
+    public void LaserActivationCheck(bool isActivated)
+    {
+        Debug.Log("1");
+        if (!isActivated)
         {
-            _deactivationTimeCounter += Time.deltaTime;
+            _deactivationTimer = true;
+        }
+        
+        else if (isActivated)
+        {
+            _activationTimer = true;
         }
     }
     
-    public void LaserActivation()
-    {
-        _activationController = true;
-    }
-
-    private void LaserDeactivation()
-    {
-        _activationController = false;
-    }
-
-    private void LaserActivationCheck()
-    {
-        if (_activationController)
-        {
-            ReplaceTheLaserForActivation();
-            CheckTimeForActivation();
-        }
-    }
-
-    private void LaserDeactivationCheck()
-    {
-        if (!_activationController)
-        {
-            CheckTimeForDeactivation();
-        }
-    }
-
 }

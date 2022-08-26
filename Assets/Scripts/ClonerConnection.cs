@@ -16,6 +16,7 @@ public class ClonerConnection : MonoBehaviour
     private float _zPosition;
     private float _zPositionSum;
 
+    public bool laserGroupActivationController = true;
     [HideInInspector] public bool _isActivatedLaserGroup;
 
     void Update()
@@ -71,10 +72,14 @@ public class ClonerConnection : MonoBehaviour
 
     private void ActivateControlTheLaserGroup()
     {
-        if (cloneAmount % 10 == 0 && cloneAmount != 0)
+        if (cloneAmount % 10 == 0 && cloneAmount != 0 && laserGroupActivationController)
         {
             _isActivatedLaserGroup = true;
             _laserGroupController.ActivateTheLasers();
+            laserGroupActivationController = false;
         }
+        
+        else if(cloneAmount % 10 != 0)
+            laserGroupActivationController = true;
     }
 }

@@ -31,7 +31,7 @@ public class LaserGroupController : MonoBehaviour
 
         for (int i = 0; i < _activeLaserAmount; i++)
         {
-            lasers[indexList[i]].LaserActivation();
+            lasers[indexList[i]].LaserActivationCheck(true);
         }
     }
 
