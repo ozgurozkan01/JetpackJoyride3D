@@ -14,7 +14,7 @@ public class RocketClonerController : MonoBehaviour
     private void CreateNewRocket()
     {
         GameObject newRocket = Instantiate(originalRocketPrefab, rocketPoint.transform.position, Quaternion.identity);
-        newRocket.transform.rotation = Quaternion.Euler(-90, 0f, 0f);
+        newRocket.transform.rotation = Quaternion.Euler(-180, 0f, 0f);
     }
 
     public void TimeControllerForFiring()

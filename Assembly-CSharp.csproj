@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\CoinDestroyController.cs" />
      <Compile Include="Assets\Scripts\CoinRotation.cs" />
      <Compile Include="Assets\Scripts\DestroyDoc.cs" />
+     <Compile Include="Assets\Scripts\DestroyRocket.cs" />
      <Compile Include="Assets\Scripts\DocAnimationController.cs" />
      <Compile Include="Assets\Scripts\DocClonerController.cs" />
      <Compile Include="Assets\Scripts\DocMovement.cs" />
@@ -88,6 +89,7 @@
      <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineStripBehavior.cs" />
      <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineVertexData.cs" />
      <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\_LineStripShader.cginc" />
+     <None Include="Assets\Sayantan\Props\Small\CruiseMissile\ReadMe.txt" />
      <None Include="Assets\EffectExamples\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
      <None Include="Assets\EffectExamples\Magic Effects\Shaders\Ice.shader" />
      <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-TextureAlphaBlended.shader" />

@@ -8,7 +8,7 @@ public class RocketMovement : MonoBehaviour
 
     void Start()
     {
-        _movementDirection = Vector3.up;
+        _movementDirection = Vector3.forward;
     }
     
     void Update()
