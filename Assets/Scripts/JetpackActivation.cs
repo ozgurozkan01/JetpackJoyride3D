@@ -11,7 +11,6 @@ public class JetpackActivation : MonoBehaviour
     {
         flameThrowerLeft.Stop();
         flameThrowerRight.Stop();
-        
     }
     
     public void JetpackActivate()

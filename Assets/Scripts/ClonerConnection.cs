@@ -6,11 +6,15 @@ public class ClonerConnection : MonoBehaviour
     [SerializeField] private CoinClonerController _coinClonerController;
     [SerializeField] private SmallLaserClonerController _smallLaserController;
     [SerializeField] private LaserGroupController _laserGroupController;
+    [SerializeField] private RocketClonerController _rocketClonerController;
 
     private int _clonerType; // 1-> coin, 2-> small laser
     private float _timeLimit = 1f;
     private float _timeCounter;
     private int cloneAmount;
+
+    private float rocketSpawnerTimer;
+    private float rocketSpawnerTimeLimit;
     
     private float _yPosition;
     private float _zPosition;
@@ -28,8 +32,8 @@ public class ClonerConnection : MonoBehaviour
 
     private void UpdatePositionOfCloneObject()
     {
-        _yPosition = Random.Range(7, 13);
-        _zPosition = Random.Range(5, 15);
+        _yPosition = Random.Range(8, 12);
+        _zPosition = Random.Range(10, 30);
 
         _zPositionSum += _zPosition;
     }
@@ -59,27 +63,29 @@ public class ClonerConnection : MonoBehaviour
     {
         if (!_isActivatedLaserGroup)
         {
+            _rocketClonerController.TimeControllerForFiring();
+            
             if (_timeCounter >= _timeLimit)
             {
                 cloneAmount += 1;
                 CreationAccordingToClonerType();
                 _timeCounter = 0f;
             }
-
+            
             _timeCounter += Time.deltaTime;
         }
     }
 
     private void ActivateControlTheLaserGroup()
     {
-        if (cloneAmount % 10 == 0 && cloneAmount != 0 && laserGroupActivationController)
+        if (cloneAmount % 50 == 0 && cloneAmount != 0 && laserGroupActivationController)
         {
             _isActivatedLaserGroup = true;
             _laserGroupController.ActivateTheLasers();
             laserGroupActivationController = false;
         }
         
-        else if(cloneAmount % 10 != 0)
+        else if(cloneAmount % 50 != 0)
             laserGroupActivationController = true;
     }
 }

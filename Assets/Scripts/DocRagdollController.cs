@@ -8,6 +8,7 @@ public class DocRagdollController : MonoBehaviour
     private Rigidbody[] _rigidbodies;
     private Collider[] _colliders;
     [SerializeField] private Animator animator;
+    [SerializeField] private DestroyDoc _destroyDoc;
 
     void Start()
     {
@@ -72,6 +73,7 @@ public class DocRagdollController : MonoBehaviour
         {
             RagdollModeOn();
             RollDownDocWhenPlayerHits();
+            _destroyDoc.DestroyingDoc();
         }
     }
 }

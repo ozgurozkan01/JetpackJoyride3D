@@ -1,32 +1,37 @@
-﻿using UnityEngine;
-using Random = UnityEngine.Random;
+﻿using System;
+using UnityEngine;
 
 public class DocAnimationController : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
-    [HideInInspector] public int typeOfAnimation; // 1-> Walk, 2-> Run
-
-    private void Start()
+    public Animator animator;
+    [SerializeField] private DocMovement _docMovement;
+    
+    private void Update()
     {
-        ActivateTheAnimation();
+        if (_docMovement.isStanding)
+        {
+            StandinAnimaiton();
+        }
+
+        if (_docMovement.isWalking)
+        {
+            WalkingAnimation();
+        }
     }
 
-    private void DetermineAnimatonTypeOfDocRandomly()
+    public void StandinAnimaiton()
     {
-        typeOfAnimation = Random.Range(1, 3);
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isRunning", false);
     }
-
-    private void ActivateTheAnimation()
+    
+    public void WalkingAnimation()
     {
-        DetermineAnimatonTypeOfDocRandomly();
-        if (typeOfAnimation == 1)
-        {
-            animator.SetBool("isWalking", true);
-        }
-        
-        else if (typeOfAnimation == 2)
-        {
-            animator.SetBool("isRunning", true);
-        }
+        animator.SetBool("isWalking", true);
+    }
+    
+    public void RunningAnimation()
+    {           
+        animator.SetBool("isRunning", true);
     }
 }

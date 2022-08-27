@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
         if (Input.GetMouseButton(0))
         {
-            JetPackActivate();
+            PlayerFly();
         }
         
         CheckIsGround();
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.velocity = new Vector3(0f, _rigidbody.velocity.y, speed * Time.deltaTime);
     }
 
-    private void JetPackActivate()
+    private void PlayerFly()
     {
         jetpackActivation.JetpackActivate();
         _rigidbody.velocity = new Vector3(0f, jetPackSpeed * Time.deltaTime, _rigidbody.velocity.z);

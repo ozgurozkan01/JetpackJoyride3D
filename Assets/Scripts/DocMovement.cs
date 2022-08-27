@@ -3,16 +3,19 @@
 public class DocMovement : MonoBehaviour
 {
     [SerializeField] private float walkSpeed;
-    [SerializeField] private float runSpeed;
-    [SerializeField] private float fallDownForce;
+    public float runSpeed;
     [SerializeField] private DocAnimationController docAnimCont;
-    private float _currentSpeed;
+    [HideInInspector] public float _currentSpeed;
     private Rigidbody _rigidbody;
     private Vector3 direction;
-    private int _directionType;
-    
+    [HideInInspector] public int _directionType;
+    private int _movementType;
+
+    [HideInInspector] public bool isWalking;
+    [HideInInspector] public bool isStanding;
     void Start()
     {
+        DetermineMovementType();
         DetermineDirectionType();
         DetermineDocMoveSpeed();
         AttachTheDirectionDoc();
@@ -25,16 +28,25 @@ public class DocMovement : MonoBehaviour
         MoveDoc();
     }
 
+    private void DetermineMovementType()
+    {
+        _movementType = Random.Range(1, 3);
+    }
+    
     public void DetermineDocMoveSpeed()
     {
-        if (docAnimCont.typeOfAnimation == 1)
+        //Idle
+        if (_movementType == 1)
         {
-            _currentSpeed = walkSpeed;
+            isStanding = true;
+            _currentSpeed = 0;
         }
         
-        else if (docAnimCont.typeOfAnimation == 2)
+        //Walk
+        else if (_movementType == 2)
         {
-            _currentSpeed = runSpeed;
+            isWalking = true;
+            _currentSpeed = walkSpeed;
         }
     }
 

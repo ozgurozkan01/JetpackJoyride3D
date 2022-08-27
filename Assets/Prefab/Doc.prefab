@@ -368,6 +368,8 @@ GameObject:
   - component: {fileID: -7658626568284651256}
   - component: {fileID: -650596218749970457}
   - component: {fileID: -5227166340347955352}
+  - component: {fileID: -9126227500775717323}
+  - component: {fileID: -1264101609702958706}
   m_Layer: 9
   m_Name: Doc
   m_TagString: Untagged
@@ -462,6 +464,7 @@ MonoBehaviour:
   mainCollider: {fileID: 5097712208786196521}
   explosionMultiplier: 3
   animator: {fileID: 262799511814435765}
+  _destroyDoc: {fileID: -9126227500775717323}
 --- !u!114 &-650596218749970457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 262799511814435765}
-  typeOfAnimation: 0
+  _docMovement: {fileID: -5227166340347955352}
 --- !u!114 &-5227166340347955352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,10 +491,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b312fbeba766414c99cbd820166bc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 100
-  runSpeed: 200
-  fallDownForce: 1500
+  walkSpeed: 150
+  runSpeed: 250
   docAnimCont: {fileID: -650596218749970457}
+  _currentSpeed: 0
+  isWalking: 0
+  isRunning: 0
+  isStanding: 0
+--- !u!114 &-9126227500775717323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109239087020461794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1cb37e9a3fdb444ba5fa27eb0ba1a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1264101609702958706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109239087020461794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bdd0aec8f6d0a14e98c40fbc77a133d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  docAnimCont: {fileID: -650596218749970457}
+  docMovement: {fileID: -5227166340347955352}
 --- !u!1 &1238726861625427038
 GameObject:
   m_ObjectHideFlags: 0

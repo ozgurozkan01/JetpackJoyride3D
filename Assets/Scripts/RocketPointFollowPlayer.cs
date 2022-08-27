@@ -26,7 +26,7 @@ public class RocketPointFollowPlayer : MonoBehaviour
     {
         if (!rocketClonerController.firingController)
         {
-            transform.position= Vector3.Lerp(transform.position, playerVerticalPoint.transform.position + _rocketOffset,
+            transform.position = Vector3.Lerp(transform.position, playerVerticalPoint.transform.position + _rocketOffset,
                 lerpMultiplier * Time.deltaTime);   
         }
     }

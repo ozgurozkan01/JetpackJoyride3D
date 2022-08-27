@@ -57,10 +57,12 @@
      <Compile Include="Assets\Scripts\CoinClonerController.cs" />
      <Compile Include="Assets\Scripts\CoinDestroyController.cs" />
      <Compile Include="Assets\Scripts\CoinRotation.cs" />
+     <Compile Include="Assets\Scripts\DestroyDoc.cs" />
      <Compile Include="Assets\Scripts\DocAnimationController.cs" />
      <Compile Include="Assets\Scripts\DocClonerController.cs" />
      <Compile Include="Assets\Scripts\DocMovement.cs" />
      <Compile Include="Assets\Scripts\DocRagdollController.cs" />
+     <Compile Include="Assets\Scripts\DocScareOffPlayer.cs" />
      <Compile Include="Assets\Scripts\GoldRotation.cs" />
      <Compile Include="Assets\Scripts\GroundPositionController.cs" />
      <Compile Include="Assets\Scripts\JetpackActivation.cs" />

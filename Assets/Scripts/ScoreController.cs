@@ -14,11 +14,6 @@ public class ScoreController : MonoBehaviour
             score += 1;
             scoreText.text = score.ToString();
             coinDestroyController.DestroyCoinWhenItsTriggered(other.gameObject);
-
-            if (score % 50 == 0 && score != 0)
-            {
-                _groundPositionController.UpdateGroundPosition();
-            }
         }
     }
 }
