@@ -480,6 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d7888f55fd20647ac0e51e8d9ac59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 0}
 --- !u!136 &2808374320324679609
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -506,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aff014d68d97cd40a12bb67eb9b7362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketSpeed: 8
+  rocketSpeed: 10
 --- !u!1 &6054866596307761333
 GameObject:
   m_ObjectHideFlags: 0

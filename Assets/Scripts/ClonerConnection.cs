@@ -9,7 +9,7 @@ public class ClonerConnection : MonoBehaviour
     [SerializeField] private RocketClonerController _rocketClonerController;
 
     private int _clonerType; // 1-> coin, 2-> small laser
-    private float _timeLimit = 1f;
+    private float _timeLimit = 0.75f;
     private float _timeCounter;
     private int cloneAmount;
 
@@ -33,7 +33,7 @@ public class ClonerConnection : MonoBehaviour
     private void UpdatePositionOfCloneObject()
     {
         _yPosition = Random.Range(5.5f, 14.5f);
-        _zPosition = Random.Range(10f, 20f);
+        _zPosition = Random.Range(5f, 15f);
 
         _zPositionSum += _zPosition;
     }

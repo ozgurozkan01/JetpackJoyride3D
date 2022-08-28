@@ -5,6 +5,7 @@ public class PlayerRagdollController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody _mainRb;
     [SerializeField] private Collider _mainColl;
+    [SerializeField] private float explosionMultiplier;
     private Rigidbody[] _rigidbodies;
     private Collider[] _colliders;
 
@@ -52,6 +53,7 @@ public class PlayerRagdollController : MonoBehaviour
         ActivateChildrenColliders();
         MainColliderIsDeactivate();
         MainRigidBodyIsKinematic();
+        //PlayerRollDownWhenDead();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -67,4 +69,13 @@ public class PlayerRagdollController : MonoBehaviour
             RagdollActivation();
         }
     }
+
+    /*
+    private void PlayerRollDownWhenDead()
+    {
+        foreach (var rb in _rigidbodies)
+        {
+            rb.AddExplosionForce(1000f * explosionMultiplier, transform.position + new Vector3(0f, -10f, -2f), 50f);
+        }
+    }*/
 }
