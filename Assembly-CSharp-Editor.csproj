@@ -91,11 +91,17 @@
  <Reference Include="Unity.Timeline">
  <HintPath>C:/Users/ozgur/Documents/GitHub/JetpackJoyride3D/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Postprocessing.Editor">
+ <HintPath>C:/Users/ozgur/Documents/GitHub/JetpackJoyride3D/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/ozgur/Documents/GitHub/JetpackJoyride3D/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
  <HintPath>C:/Users/ozgur/Documents/GitHub/JetpackJoyride3D/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Postprocessing.Runtime">
+ <HintPath>C:/Users/ozgur/Documents/GitHub/JetpackJoyride3D/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>C:/Users/ozgur/Documents/GitHub/JetpackJoyride3D/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
@@ -114,12 +120,6 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/ozgur/Documents/GitHub/JetpackJoyride3D/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>C:/Users/ozgur/Documents/GitHub/JetpackJoyride3D/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>C:/Users/ozgur/Documents/GitHub/JetpackJoyride3D/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity 2019.4.32f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
