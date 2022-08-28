@@ -10,6 +10,6 @@ public class DestroyRocket : MonoBehaviour
 
     void DestroyingRocket()
     {
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 3);
     }
 }

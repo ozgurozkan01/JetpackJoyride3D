@@ -58,12 +58,12 @@ public class LaserPrefabController : MonoBehaviour
 
     private void ReplaceTheLaserForActivation()
     {
-        if (offsetLaserLeft >= 7.5f)
+        if (offsetLaserLeft >= 10f)
         {
             laserLeft.transform.position = Vector3.Lerp(laserLeft.transform.position, laserLeft.transform.position + new Vector3(0f, 0f, 1), lerpMultiplier * Time.deltaTime);
         }
         
-        if (offsetLaserRight >= 7.5f)
+        if (offsetLaserRight >= 10f)
         {
             laserRight.transform.position = Vector3.Lerp(laserRight.transform.position, laserRight.transform.position + new Vector3(0f, 0f, -1f), lerpMultiplier * Time.deltaTime);
         }
@@ -76,12 +76,12 @@ public class LaserPrefabController : MonoBehaviour
 
     private void ReplaceTheLaserForDeactivation()
     {
-        if (offsetLaserLeft <= 10f)
+        if (offsetLaserLeft <= 12.5f)
         {
             laserLeft.transform.position = Vector3.Lerp(laserLeft.transform.position, laserLeft.transform.position + new Vector3(0f, 0f, -1), lerpMultiplier * Time.deltaTime);
         }
         
-        if (offsetLaserRight <= 10f)
+        if (offsetLaserRight <= 12.5f)
         {
             laserRight.transform.position = Vector3.Lerp(laserRight.transform.position, laserRight.transform.position + new Vector3(0f, 0f, 1f), lerpMultiplier * Time.deltaTime);
         }
@@ -121,7 +121,6 @@ public class LaserPrefabController : MonoBehaviour
     
     public void LaserActivationCheck(bool isActivated)
     {
-        Debug.Log("1");
         if (!isActivated)
         {
             _deactivationTimer = true;

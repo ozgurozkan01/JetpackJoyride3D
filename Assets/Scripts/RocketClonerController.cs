@@ -6,9 +6,8 @@ public class RocketClonerController : MonoBehaviour
     [SerializeField] private GameObject originalRocketPrefab;
     [SerializeField] private Transform rocketPoint;
     [HideInInspector] public bool firingController;
-
-
-    [SerializeField] private float _timeLimit;
+    
+    public float _timeLimit;
     private float _timeCounter;
 
     private void CreateNewRocket()
@@ -26,7 +25,7 @@ public class RocketClonerController : MonoBehaviour
             firingController = false;
             _timeCounter = 0;
         }
-
+    
         _timeCounter += Time.deltaTime;
     }
 }   

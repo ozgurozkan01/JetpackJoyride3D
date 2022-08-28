@@ -491,12 +491,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b312fbeba766414c99cbd820166bc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 150
-  runSpeed: 250
+  walkSpeed: 175
+  runSpeed: 300
   docAnimCont: {fileID: -650596218749970457}
   _currentSpeed: 0
+  _directionType: 0
   isWalking: 0
-  isRunning: 0
   isStanding: 0
 --- !u!114 &-9126227500775717323
 MonoBehaviour:
